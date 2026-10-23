@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar"
 import InstituteCard from "@/components/InstituteCard"
-
+import Button from "@/components/Button"
 const institutes = [
   {
     id: 1,
@@ -35,14 +35,14 @@ const institutes = [
     name: "IIT Kharagpur (Cloud Computing Certificate)",
     location: "Kharagpur, West Bengal",
     description: "Gain in demand skills witha hands on cloud computing certification from IIT Kharagpur",
-    image: "iit.jpg"
+    image: "/iit.jpg"
   },
   {
     id: 6,
     name: "Simplify Agri",
     location: "Kerala, India",
     description: "An innovative platform focused on smart agriculture and technology driven solutions for farmers",
-    image: ""
+    image: "/agri.jpg"
   }
 ]
 
@@ -59,11 +59,15 @@ export default function Home() {
               location={institute.location}
               description={institute.description}
               image={institute.image}
-            />
-
-            
+            /> 
           )
         )}
+        </div>
+        <div className="mt-8 flex justify-center">
+          <Button >
+            Apply now 
+          </Button>
+
         </div>
       </main>
     </>
