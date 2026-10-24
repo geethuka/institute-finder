@@ -1,48 +1,78 @@
 import Navbar from "@/components/Navbar"
 import InstituteCard from "@/components/InstituteCard"
 import Button from "@/components/Button"
+// const institutes = [
+//   {
+//     id: 1,
+//     name: "APJ Abdul Kalam Technological University",
+//     location: "Kerala, India",
+//     description: "A leading university in Kerala offering quality education in engineering, technology and applied sciences.",
+//     image: "/images.jpg"
+//   },
+//   {
+//     id: 2,
+//     name: "MES College of Engineering Kuttipuram",
+//     location: "Kuttipuram, Kerala",
+//     description: "A reputed institution known for its academic excellenece and strong placement support.",
+//     image: "/mes.jpg"
+//   },
+//   {
+//     id: 3,
+//     name: "University of Calicut",
+//     location: "Calicut, Kerala",
+//     description: "One of the largest universities in Kerala with a wide range of undergraduate and postgraduate programs.",
+//     image: "/calicut.jpg"
+//   },
+//   {
+//     id: 4,
+//     name: "MES Kalladi College Mannarkkad",
+//     location: "Mannarkkad, Kerala",
+//     description: "A well-known college offering quality education and a supportive learning environment.",
+//     image: "/kalladi.jpg"
+//   },
+//   {
+//     id: 5,
+//     name: "IIT Kharagpur (Cloud Computing Certificate)",
+//     location: "Kharagpur, West Bengal",
+//     description: "Gain in demand skills witha hands on cloud computing certification from IIT Kharagpur",
+//     image: "/iit.jpg"
+//   },
+//   {
+//     id: 6,
+//     name: "Simplify Agri",
+//     location: "Kerala, India",
+//     description: "An innovative platform focused on smart agriculture and technology driven solutions for farmers",
+//     image: "/agri.jpg"
+//   }
+// ]
+
+const mainDescription = `It is a bright, cold day in April, and the clocks are striking thirteen. In the grim metropolis of Airstrip One (formerly London), nothing 
+    belongs to the individual. The world is divided into three perpetual, warring superstates—Oceania, Eurasia, and Eastasia—and Oceania is ruled by The Party, 
+    an omnipresent totalitarian regime led by a figurehead known as Big Brother.
+    Big Brother is always watching through two-way telescreens in every home and workplace. History is continuously rewritten to suit the Party’s
+    changing narrative, and language itself is being systematically dismantled into "Newspeak" to make rebellious thought literally impossible.It is a bright, cold day in April, and the clocks are striking thirteen. In the grim metropolis of Airstrip One (formerly London), nothing 
+    belongs to the individual. The world is divided into three perpetual, warring superstates—Oceania, Eurasia, and Eastasia—and Oceania is ruled by The Party, 
+    an omnipresent totalitarian regime led by a figurehead known as Big Brother.
+    Big Brother is always watching through two-way telescreens in every home and workplace. History is continuously rewritten to suit the Party’s
+    changing narrative, and language itself is being systematically dismantled into "Newspeak" to make rebellious thought literally impossible.It is a bright, cold day in April, and the clocks are striking thirteen. In the grim metropolis of Airstrip One (formerly London), nothing 
+    belongs to the individual. The world is divided into three perpetual, warring superstates—Oceania, Eurasia, and Eastasia—and Oceania is ruled by The Party, 
+    an omnipresent totalitarian regime led by a figurehead known as Big Brother.
+    Big Brother is always watching through two-way telescreens in every home and workplace. History is continuously rewritten to suit the Party’s
+    changing narrative, and language itself is being systematically dismantled into "Newspeak" to make rebellious thought literally impossible`;
+
+
 const institutes = [
   {
     id: 1,
-    name: "APJ Abdul Kalam Technological University",
-    location: "Kerala, India",
-    description: "A leading university in Kerala offering quality education in engineering, technology and applied sciences.",
-    image: "/images.jpg"
+    description: mainDescription
   },
   {
     id: 2,
-    name: "MES College of Engineering Kuttipuram",
-    location: "Kuttipuram, Kerala",
-    description: "A reputed institution known for its academic excellenece and strong placement support.",
-    image: "/mes.jpg"
+    description: mainDescription
   },
   {
     id: 3,
-    name: "University of Calicut",
-    location: "Calicut, Kerala",
-    description: "One of the largest universities in Kerala with a wide range of undergraduate and postgraduate programs.",
-    image: "/calicut.jpg"
-  },
-  {
-    id: 4,
-    name: "MES Kalladi College Mannarkkad",
-    location: "Mannarkkad, Kerala",
-    description: "A well-known college offering quality education and a supportive learning environment.",
-    image: "/kalladi.jpg"
-  },
-  {
-    id: 5,
-    name: "IIT Kharagpur (Cloud Computing Certificate)",
-    location: "Kharagpur, West Bengal",
-    description: "Gain in demand skills witha hands on cloud computing certification from IIT Kharagpur",
-    image: "/iit.jpg"
-  },
-  {
-    id: 6,
-    name: "Simplify Agri",
-    location: "Kerala, India",
-    description: "An innovative platform focused on smart agriculture and technology driven solutions for farmers",
-    image: "/agri.jpg"
+    description: mainDescription
   }
 ]
 
@@ -50,15 +80,15 @@ export default function Home() {
   return (
     <>
      <Navbar />
-      <main className="mx-auto max-w-6xl px-6 pt-30">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <main className="w-full max-w-6xl mx-auto px-4 pt-30">
+        <div className="flex flex-col md:flex-row gap-8 w-full items-stretch">
           {institutes.map((institute) => (
             <InstituteCard
               key={institute.id}
-              name={institute.name}
-              location={institute.location}
+              // name={institute.name}
+              // location={institute.location}
               description={institute.description}
-              image={institute.image}
+              // image={institute.image}
             /> 
           )
         )}
