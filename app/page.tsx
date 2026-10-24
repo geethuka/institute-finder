@@ -1,50 +1,10 @@
+"use client"
 import Navbar from "@/components/Navbar"
 import InstituteCard from "@/components/InstituteCard"
 import Button from "@/components/Button"
-// const institutes = [
-//   {
-//     id: 1,
-//     name: "APJ Abdul Kalam Technological University",
-//     location: "Kerala, India",
-//     description: "A leading university in Kerala offering quality education in engineering, technology and applied sciences.",
-//     image: "/images.jpg"
-//   },
-//   {
-//     id: 2,
-//     name: "MES College of Engineering Kuttipuram",
-//     location: "Kuttipuram, Kerala",
-//     description: "A reputed institution known for its academic excellenece and strong placement support.",
-//     image: "/mes.jpg"
-//   },
-//   {
-//     id: 3,
-//     name: "University of Calicut",
-//     location: "Calicut, Kerala",
-//     description: "One of the largest universities in Kerala with a wide range of undergraduate and postgraduate programs.",
-//     image: "/calicut.jpg"
-//   },
-//   {
-//     id: 4,
-//     name: "MES Kalladi College Mannarkkad",
-//     location: "Mannarkkad, Kerala",
-//     description: "A well-known college offering quality education and a supportive learning environment.",
-//     image: "/kalladi.jpg"
-//   },
-//   {
-//     id: 5,
-//     name: "IIT Kharagpur (Cloud Computing Certificate)",
-//     location: "Kharagpur, West Bengal",
-//     description: "Gain in demand skills witha hands on cloud computing certification from IIT Kharagpur",
-//     image: "/iit.jpg"
-//   },
-//   {
-//     id: 6,
-//     name: "Simplify Agri",
-//     location: "Kerala, India",
-//     description: "An innovative platform focused on smart agriculture and technology driven solutions for farmers",
-//     image: "/agri.jpg"
-//   }
-// ]
+import ApplyModal from "@/components/ApplyModal"
+import { useState } from "react"
+
 
 const mainDescription = `It is a bright, cold day in April, and the clocks are striking thirteen. In the grim metropolis of Airstrip One (formerly London), nothing 
     belongs to the individual. The world is divided into three perpetual, warring superstates—Oceania, Eurasia, and Eastasia—and Oceania is ruled by The Party, 
@@ -77,6 +37,7 @@ const institutes = [
 ]
 
 export default function Home() {
+  const [isModalopen,setmodalopen] = useState(false);
   return (
     <>
      <Navbar />
@@ -94,14 +55,19 @@ export default function Home() {
         )}
         </div>
         <div className="mt-8 flex justify-center">
-          <Button >
+          <Button onClick={() =>
+            setmodalopen(true)}>
             Apply now 
           </Button>
 
         </div>
+        {isModalopen && (<ApplyModal onClose = {() =>
+          setmodalopen(false)} />
+        )}
       </main>
     </>
      
      
   )
 }
+
